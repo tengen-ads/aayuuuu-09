@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM BHAI - Premium Access</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1746345963311402');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1746345963311402&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #030712;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Stars/Particles */
+        .bg-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            animation: pulseGlow 4s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+        }
+
+        /* Main Container Card */
+        .card-container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 420px;
+            background: rgba(10, 22, 40, 0.85);
+            border: 1.5px solid rgba(14, 165, 233, 0.4);
+            border-radius: 24px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(14, 165, 233, 0.2);
+            backdrop-filter: blur(12px);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profile Avatar Frame with Blue Tint/Glow */
+        .avatar-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, #0284c7, #38bdf8);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+            animation: avatarFloat 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes avatarFloat {
+            0% { transform: translateY(0); box-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
+            100% { transform: translateY(-6px); box-shadow: 0 0 35px rgba(56, 189, 248, 0.8); }
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #000;
+            /* Blue color tint effect applied to match theme */
+            filter: hue-rotate(180deg) saturate(1.5) brightness(0.9);
+        }
+
+        /* Badge Tag */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        /* Headline Section */
+        .main-headline {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            margin-bottom: 6px;
+        }
+
+        .sub-headline {
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .sub-headline span {
+            color: #38bdf8;
+        }
+
+        /* Feature List */
+        .features {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        /* Animated CTA Button */
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(90deg, #0284c7, #0369a1, #38bdf8);
+            background-size: 200% auto;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(2, 132, 199, 0.6);
+            transition: all 0.3s ease;
+            animation: pulseBtn 2s infinite, gradientMove 3s infinite linear;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        @keyframes pulseBtn {
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(2, 132, 199, 0.6); }
+            50% { transform: scale(1.03); box-shadow: 0 0 30px rgba(56, 189, 248, 0.9); }
+            100% { transform: scale(1); box-shadow: 0 0 15px rgba(2, 132, 199, 0.6); }
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 1);
+        }
+
+        /* Disclaimer Box */
+        .disclaimer-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 10px;
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 18px;
+            margin-bottom: 22px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 18px;
+        }
+
+        .stat-item h4 {
+            font-size: 16px;
+            color: #38bdf8;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 10px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="card-container" id="mainCard">
+        <!-- Profile Avatar Section -->
+        <div class="avatar-wrapper">
+            <img src="https://www.image2url.com/r2/default/images/1790152565699-b2a9f757-c36e-4407-a195-5b7597b06d28.png" alt="SYSTEM BHAI" class="avatar-img" onerror="this.src='https://via.placeholder.com/140/0284c7/ffffff?text=SYSTEM+BHAI'">
+        </div>
+
+        <!-- Category Badge -->
+        <div class="badge">
+            <i class="fa-solid fa-shield-halved"></i> COMMUNITY & STRATEGY
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="mainheadline">SYSTEM BHAI</h1>
+
+        <!-- Sub Headline -->
+        <div class="sub-headline">
+            🔥 <span>Premium Community Access</span> 🔥
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            Market Trends • Strategy Discussions • Community Insights • Daily Updates
+        </div>
+
+        <!-- Animated Telegram Button -->
+        <a href="https://t.me/+KcxTTdksZLhmYzBl" class="cta-btn" id="joinBtn" onclick="trackClick(event)">
+            <i class="fa-brands fa-telegram" style="font-size: 22px;"></i>
+            JOIN TELEGRAM
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer-box">
+            Entertainment & community purposes only. No guaranteed results or profits.
+        </div>
+
+        <!-- Stats Counter -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h4>24/7</h4>
+                <p>COMMUNITY ACCESS</p>
+            </div>
+            <div class="stat-item">
+                <h4>15K+</h4>
+                <p>MEMBERS</p>
+            </div>
+            <div class="stat-item">
+                <h4>LIVE</h4>
+                <p>DAILY UPDATES</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anti-Bot & Anti-Fake Click Security Script -->
+    <script>
+        (function() {
+            let pageLoadTime = Date.now();
+            let isRealUserInteracted = false;
+
+            // 1. Check Bot User-Agents (Meta Crawler, FB external hit, Headless Browsers)
+            const botPatterns = [
+                "facebookexternalhit", "facebookcatalog", "facebookbot", "metageneratordescription",
+                "telegrambot", "headlesschrome", "puppeteer", "selenium", "phantomjs", "bot", "crawler", "spider"
+            ];
+            
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isBotUserAgent = botPatterns.some(pattern => userAgent.includes(pattern));
+
+            // 2. Headless Browser Check
+            const isHeadless = navigator.webdriver || !navigator.languages || navigator.languages.length === 0;
+
+            if (isBotUserAgent || isHeadless) {
+                // Neutralize links for bots
+                document.addEventListener("DOMContentLoaded", function() {
+                    const btn = document.getElementById("joinBtn");
+                    if (btn) btn.href = "javascript:void(0);";
+                });
+            }
+
+            // Track Real User Interaction (Mouse movement / Touch)
+            function registerHuman() {
+                isRealUserInteracted = true;
+                window.removeEventListener("mousemove", registerHuman);
+                window.removeEventListener("touchstart", registerHuman);
+                window.removeEventListener("scroll", registerHuman);
+            }
+
+            window.addEventListener("mousemove", registerHuman);
+            window.addEventListener("touchstart", registerHuman);
+            window.addEventListener("scroll", registerHuman);
+
+            // 3. Click Verification (Block Instant Fake Clicks)
+            window.trackClick = function(e) {
+                const clickTime = Date.now();
+                const timeDiff = clickTime - pageLoadTime;
+
+                // If click happens in less than 800ms or without prior user movement, block fake click
+                if (timeDiff < 800 || !isRealUserInteracted) {
+                    e.preventDefault();
+                    console.warn("Blocked potential automated / fake click.");
+                    return false;
+                }
+
+                // Fire Meta Pixel Event on Real Click
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                }
+            };
+        })();
+    </script>
+</body>
+</html>
